@@ -9,7 +9,7 @@
       <h3>{{ questionSelected.question }}</h3>
   </div>
 
-  <div *ngIf=!finished class="quizz_options">
+  <div *ngIf="!finished" class="quizz_options">
 
     <button
       *ngFor="let option of questionSelected.options; let i = index"
@@ -24,6 +24,6 @@
   <div *ngIf="finished" class="quizz_results">
     <h1>O Seu resultado é:</h1>
     <p>{{ answerSelected }}</p>
-    <button class="btn-return">Jogar novamente</button>
+    <a class="btn-return" href="/">Jogar novamente</a>
   </div>
 </div>

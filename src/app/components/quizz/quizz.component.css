@@ -41,6 +41,7 @@
   background-color: transparent;
   border-radius: 8px;
   border: 1px solid #18ab29;
+  outline: none;
   width: 100%;
   display: inline-block;
   cursor: pointer;
@@ -50,6 +51,7 @@
   padding: 16px 31px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
+  transition: background .3s ease;
 }
 
 .btn-return {
@@ -57,7 +59,7 @@
   margin-top: 1rem;
 }
 
-.btn-option:hover, .btn-return:hover {
+.btn-option:hover, .btn-return:hover, .btn-option:focus, .btn-return:focus {
   background-color: #5cbf2a;
 }
 
