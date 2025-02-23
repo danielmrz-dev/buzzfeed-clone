@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import quizz_questions from "../../../assets/data/quizz_questions.json"
+import { QuizService } from 'src/app/services/quiz.service';
+import { IQuestion } from 'src/app/interfaces/quiz.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-quizz',
@@ -10,26 +13,26 @@ import quizz_questions from "../../../assets/data/quizz_questions.json"
 export class QuizzComponent implements OnInit {
 
   title: string = "";
-  questions: any;
-  questionSelected: any;
+  questions: IQuestion[] = [];
+  questionSelected!: IQuestion;
   answers: string[] = [];
   answerSelected: string = "";
   questionIndex: number = 0;
   questionMaxIndex: number = 0;
   finished: boolean = false;
+  sub!: Subscription;
 
-  
+  constructor(private readonly quizService: QuizService) {}
 
   ngOnInit(): void {
-    if (quizz_questions) {
+    this.sub = this.quizService.getQuestions().subscribe((questions) => {
       this.finished = false;
-      this.title = quizz_questions.title;
-      this.questions = quizz_questions.questions;
-      this.questionSelected = this.questions[this.questionIndex];
+      this.title = questions.title;
+      this.questions = questions.questions;
       this.questionIndex = 0;
+      this.questionSelected = questions.questions[0];
       this.questionMaxIndex = this.questions.length;
-    }
-
+    })
   }
 
   playerChoose(value: string) {
@@ -39,7 +42,6 @@ export class QuizzComponent implements OnInit {
 
   async nextStep() {
     this.questionIndex += 1;
-
     if (this.questionMaxIndex > this.questionIndex) {
       this.questionSelected = this.questions[this.questionIndex];
     } else {
@@ -50,7 +52,6 @@ export class QuizzComponent implements OnInit {
   }
 
   async checkResult(anwsers: string[]) {
-
     const result = anwsers.reduce((previous, current, i, arr) => {
       if (
         arr.filter(item => item === previous).length >
@@ -61,7 +62,10 @@ export class QuizzComponent implements OnInit {
         return current;
       }
     })
-
     return result;
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

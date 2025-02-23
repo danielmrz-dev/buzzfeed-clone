@@ -18,9 +18,9 @@ export const quiz: IQuiz = {
             id: 2,
             question: "Quem você salvaria primeiro ?",
             options: [
-                { id: 1, name: "Crianças", alias: "A" },
-                { id: 2, name: "Idosos", alias: "A" },
-                { id: 3, name: "Não saberia escolher", alias: "B" }
+                { id: 1, name: "Crianças", alias: "B" },
+                { id: 2, name: "Idosos", alias: "B" },
+                { id: 3, name: "Não saberia escolher", alias: "A" }
             ]
         },
         {
