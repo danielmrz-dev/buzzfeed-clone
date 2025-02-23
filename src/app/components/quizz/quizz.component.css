@@ -1,10 +1,10 @@
-.quizz__container{
+.quizz__container {
   width: 80%;
   margin: auto;
   margin-top: 20px;
 }
 
-.quizz_logo{
+.quizz_logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,21 +12,21 @@
   margin-bottom: 10px;
 }
 
-.quizz_logo > h3{
+.quizz_logo > h3 {
   margin-top: 20px;
 }
 
-.quizz_questions{
+.quizz_questions {
   display: flex;
   justify-content: center;
   align-items: center;
-  border:1px solid #4224d9;
+  border: 1px solid #4224d9;
   border-radius: 8px;
-  background-color: #644ED2;
+  background-color: #644ed2;
   width: 100%;
   height: 200px;
   font-size: 20px;
-  font-family: 'Segoe UI';
+  font-family: "Segoe UI";
   margin-bottom: 20px;
 }
 
@@ -37,7 +37,8 @@
   margin: auto;
 }
 
-.btn-option, .btn-return {
+.btn-option,
+.btn-return {
   background-color: transparent;
   border-radius: 8px;
   border: 1px solid #18ab29;
@@ -51,7 +52,7 @@
   padding: 16px 31px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
-  transition: background .3s ease;
+  transition: background 0.3s ease;
 }
 
 .btn-return {
@@ -59,19 +60,22 @@
   margin-top: 1rem;
 }
 
-.btn-option:hover, .btn-return:hover, .btn-option:focus, .btn-return:focus {
+.btn-option:hover,
+.btn-return:hover,
+.btn-option:focus,
+.btn-return:focus {
   background-color: #5cbf2a;
 }
 
-.btn-option:active{
+.btn-option:active {
   position: relative;
-  top:1px;
+  top: 1px;
 }
 
-.quizz_results{
+.quizz_results {
   width: 100%;
   height: 350px;
-  background-color: #1F0539;
+  background-color: #1f0539;
   border-radius: 10px;
   padding: 30px;
   display: flex;
