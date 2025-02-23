@@ -30,19 +30,18 @@
   margin-bottom: 20px;
 }
 
-.quizz_options{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.quizz_options {
+  display: grid;
+  width: 100%;
+  gap: 0.5rem;
   margin: auto;
-  margin-bottom: 20px;
 }
 
-.btn-option{
+.btn-option, .btn-return {
   background-color: transparent;
   border-radius: 8px;
   border: 1px solid #18ab29;
-  width: 50%;
+  width: 100%;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -53,7 +52,12 @@
   text-shadow: 0px 1px 0px #2f6627;
 }
 
-.btn-option:hover{
+.btn-return {
+  max-width: fit-content;
+  margin-top: 1rem;
+}
+
+.btn-option:hover, .btn-return:hover {
   background-color: #5cbf2a;
 }
 
